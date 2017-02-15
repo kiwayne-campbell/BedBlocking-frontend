@@ -1,4 +1,4 @@
-angular.module('finalProject')
+angular.module('bedBlockingProject')
   .config(Router);
 
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];

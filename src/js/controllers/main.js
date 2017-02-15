@@ -1,4 +1,4 @@
-angular.module('finalProject')
+angular.module('bedBlockingProject')
   .controller('MainController', MainController);
 
 MainController.$inject = ['$auth', '$state', '$rootScope'];

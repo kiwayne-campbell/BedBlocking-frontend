@@ -1,4 +1,4 @@
-angular.module('finalProject')
+angular.module('bedBlockingProject')
   .factory('Patient', Patient);
 
 Patient.$inject = ['$resource', 'API_URL'];

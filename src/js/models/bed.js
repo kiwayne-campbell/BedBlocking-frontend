@@ -1,4 +1,4 @@
-angular.module('finalProject')
+angular.module('bedBlockingProject')
   .factory('Bed', Bed);
 
 Bed.$inject = ['$resource', 'API_URL'];

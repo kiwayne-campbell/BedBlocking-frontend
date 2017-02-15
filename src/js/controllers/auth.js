@@ -1,4 +1,4 @@
-angular.module('finalProject')
+angular.module('bedBlockingProject')
   .controller('RegisterController', RegisterController)
   .controller('LoginController', LoginController);
 

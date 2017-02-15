@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="finalProject">
+<html ng-app="bedBlockingProject">
   <head>
     <meta charset="utf-8">
     <title>Final Project</title>
@@ -12,11 +12,11 @@
     <body ng-controller="MainController as main">
           <nav class="navbar navbar-light bg-faded navbar-fixed-top">
             <a class="home-festiivo" ui-sref="home" ui-sref-active="active">
-              <strong style="font-size:25px">FESTIIVO</strong>
+              <strong style="font-size:25px">Hospital Discharge Care</strong>
             </a>
             <span class="navbar-text float-xs-right text-muted">
             <a ng-if="main.isLoggedIn()" ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active">Profile</a>
-            <a ui-sref="festivalsIndex" ui-sref-active="active">Festivals</a>
+            <a ui-sref="festivalsIndex" ui-sref-active="active">My Patients</a>
             <!-- <a ui-sref="commentsIndex" ui-sref-active="active">Comments</a> -->
             <a ng-if="!main.isLoggedIn()" ui-sref="register" ui-sref-active="active">Register</a>
             <a ng-if="!main.isLoggedIn()" ui-sref="login" ui-sref-active="active">Login</a>

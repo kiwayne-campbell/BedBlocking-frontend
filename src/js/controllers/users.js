@@ -1,4 +1,4 @@
-angular.module('finalProject')
+angular.module('bedBlockingProject')
   .controller('UsersIndexController', UsersIndexController)
   .controller('UsersShowController', UsersShowController)
   .controller('UsersEditController', UsersEditController);
@@ -11,8 +11,8 @@ function UsersIndexController(User) {
   usersIndex.all = User.query();
 }
 
-UsersShowController.$inject = ['User', '$state', '$auth', 'Festival', 'API_URL'];
-function UsersShowController(User, $state, $auth, Festival, API_URL) {
+UsersShowController.$inject = ['User', '$state', '$auth', 'API_URL', 'Patient'];
+function UsersShowController(User, $state, $auth, API_URL, Patient) {
   const usersShow = this;
 
   function isCurrentUser() {

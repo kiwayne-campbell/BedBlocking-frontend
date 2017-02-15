@@ -1,65 +1,65 @@
-angular.module('finalProject')
-  .controller('FestivalsIndexController', FestivalsIndexController)
-  .controller('FestivalsShowController', FestivalsShowController)
-  .controller('FestivalsEditController', FestivalsEditController);
+angular.module('bedBlockingProject')
+  .controller('PatientsIndexController', PatientsIndexController)
+  .controller('PatientsShowController', PatientsShowController)
+  .controller('PatientsEditController', PatientsEditController);
 
-FestivalsIndexController.$inject = ['Festival', '$state', '$scope'];
-function FestivalsIndexController(Festival, $state, $scope) {
-  const festivalsIndex = this;
-  festivalsIndex.all = Festival.query({ q: $state.params.q });
-  festivalsIndex.featured = Festival.featured();
+PatientsIndexController.$inject = ['Patient', '$state'];
+function PatientsIndexController(Patient, $state) {
+  const patientsIndex = this;
+  patientsIndex.all = Patient.query({ q: $state.params.q });
+  patientsIndex.featured = Patient.featured();
 
 }
 
-FestivalsShowController.$inject = ['Festival', '$state', 'Comment', 'User'];
-function FestivalsShowController(Festival, $state, Comment, User) {
-  const festivalsShow = this;
+PatientsShowController.$inject = ['Patient', '$state', 'User'];
+function PatientsShowController(Patient, $state, User) {
+  const patientsShow = this;
 
-  festivalsShow.festival = Festival.get($state.params);
+  patientsShow.patient = Patient.get($state.params);
 
-  festivalsShow.comment = {
-    festival_id: $state.params.id
+  patientsShow.comment = {
+    patient_id: $state.params.id
   };
 
   function addComment() {
-    Comment.save(festivalsShow.comment, () => {
+    Comment.save(patientsShow.comment, () => {
       $state.reload();
     });
   }
 
 
-  festivalsShow.add = addComment;
+  patientsShow.add = addComment;
 
 
   function favorite() {
-    festivalsShow.festival.$favorite(() => {
+    patientsShow.patient.$favorite(() => {
       $state.reload();
     });
   }
   // add main-message- added to favourites!
 
-  festivalsShow.favorite = favorite;
+  patientsShow.favorite = favorite;
 
 
-  function deleteFestival() {
-    festivalsShow.festival.$remove(() => {
-      $state.go('festivalsIndex');
+  function deletePatient() {
+    patientsShow.patient.$remove(() => {
+      $state.go('patientsIndex');
     });
   }
 
-  festivalsShow.delete = deleteFestival;
+  patientsShow.delete = deletePatient;
 }
 
 
-FestivalsEditController.$inject = ['Festival', '$state'];
-function FestivalsEditController(Festival, $state) {
-  const festivalsEdit = this;
+PatientsEditController.$inject = ['Patient', '$state'];
+function PatientsEditController(Patient, $state) {
+  const patientsEdit = this;
 
-  festivalsEdit.festival = Festival.get($state.params);
+  patientsEdit.patient = Patient.get($state.params);
 
   function update() {
-    festivalsEdit.festival.$update(() => {
-      $state.go('festivalsShow', $state.params);
+    patientsEdit.patient.$update(() => {
+      $state.go('patientsShow', $state.params);
     });
   }
 
