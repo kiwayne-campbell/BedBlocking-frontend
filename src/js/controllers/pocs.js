@@ -3,12 +3,10 @@ angular.module('bedBlockingProject')
   .controller('PocsShowController', PocsShowController)
   .controller('PocsEditController', PocsEditController);
 
-PocsIndexController.$inject = ['Poc', '$state'];
-function PocsIndexController(Poc, $state) {
+PocsIndexController.$inject = ['Poc'];
+function PocsIndexController(Poc) {
   const pocsIndex = this;
-  pocsIndex.all = Poc.query({ q: $state.params.q });
-  pocsIndex.featured = Poc.featured();
-
+  pocsIndex.all = Poc.query();
 }
 
 PocsShowController.$inject = ['Poc', '$state', 'User', 'Patient'];

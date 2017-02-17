@@ -1,0 +1,21 @@
+<section>
+  <h1>Pocs Show</h1>
+  <ul>
+    <li ng-repeat="poc in pocsIndex.all">
+      <h2>{{ poc.home_care }}</h2>
+      <h4>{{ poc.meals_on_wheels }}</h4>
+      <h4>{{ poc.frozen_meals}}</h4>
+      <h4>{{ poc.district_nurse}}</h4>
+      <h4>{{ poc.physio}}</h4>
+      <h4>{{ poc.residential_home}}</h4>
+      <h4>{{ poc.nursing_home}}</h4>
+      <h4>{{ poc.other}}</h4>
+      <h4>{{ poc.notes}}</h4>
+
+      <h4>{{ poc.patient.patient_no }}</h4>
+      <h4>{{ poc.patient.first_name }}</h4>
+      <h4>{{ poc.patient.last_name }}</h4>
+
+    </li>
+  </ul>
+</section>

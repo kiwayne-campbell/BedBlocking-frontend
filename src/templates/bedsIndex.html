@@ -1,0 +1,16 @@
+<section>
+  <h1>Beds Show</h1>
+  <ul>
+    <li ng-repeat="bed in bedsIndex.all">
+      <h2>{{ bed.hospital_name }}</h2>
+      <h4>{{ bed.hospital_location }}</h4>
+      <h4>{{ bed.beds_available }}</h4>
+
+      <h4>{{ bed.patient.patient_no }}</h4>
+      <h4>{{ bed.patient.first_name }}</h4>
+      <h4>{{ bed.patient.last_name }}</h4>
+      
+      <p> must insert link to patient here</p>
+    </li>
+  </ul>
+</section>

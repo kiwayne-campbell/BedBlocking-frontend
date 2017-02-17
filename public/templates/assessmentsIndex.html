@@ -1,0 +1,23 @@
+<section>
+  <h1>Assessments Show</h1>
+  <ul>
+    <li ng-repeat="assessment in assessmentsIndex.all">
+      <h2>{{ assessment.medically_stable }}</h2>
+      <h4>{{ assessment.rehab_in_short_term }}</h4>
+      <h4>{{ assessment.discharge_destination }}</h4>
+      <h4>{{ assessment.requires_level_of_nursing_care }}</h4>
+      <h4>{{ assessment.housing_issues }}</h4>
+      <h4>{{ assessment.under_age_18 }}</h4>
+      <h4>{{ assessment.mental_health_problems }}</h4>
+      <h4>{{ assessment.requires_respite_care }}</h4>
+      <h4>{{ assessment.requires_long_term_placement }}</h4>
+
+      <h4>{{ assessment.patient.patient_no }}</h4>
+      <h4>{{ assessment.patient.first_name }}</h4>
+      <h4>{{ assessment.patient.last_name }}</h4>
+
+      <p>must insert link to patient here- so need to loop over data</p>
+
+    </li>
+  </ul>
+</section>

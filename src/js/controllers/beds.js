@@ -3,12 +3,10 @@ angular.module('bedBlockingProject')
   .controller('BedsShowController', BedsShowController)
   .controller('BedsEditController', BedsEditController);
 
-BedsIndexController.$inject = ['Bed', '$state'];
-function BedsIndexController(Bed, $state) {
+BedsIndexController.$inject = ['Bed'];
+function BedsIndexController(Bed) {
   const bedsIndex = this;
-  bedsIndex.all = Bed.query({ q: $state.params.q });
-  bedsIndex.featured = Bed.featured();
-
+  bedsIndex.all = Bed.query();
 }
 
 BedsShowController.$inject = ['Bed', '$state', 'User', 'Patient'];
