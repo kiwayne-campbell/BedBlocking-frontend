@@ -36,8 +36,8 @@ function Router($stateProvider, $urlRouterProvider) {
     })
     .state('usersShow', {
       url: '/users/:id',
-      templateUrl: '/templates/usersEdit.html',
-      controller: 'UsersEditController as usersEdit'
+      templateUrl: '/templates/usersShow.html',
+      controller: 'UsersShowController as usersShow'
     })
     .state('patientsShow', {
       url: '/patients/:id',
