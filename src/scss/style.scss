@@ -1,1 +1,46 @@
 @import "vendor";
+
+body {
+  background-color: #FFFFFF;
+}
+
+ul#NhsUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 2px solid #3399FF;
+
+  img#NhsLogo {
+    float: left;
+  }
+
+  li {
+    float: right;
+    line-height: 80px;
+    height: 20px;
+      &#navbarNhsTitle{
+        float: left;
+        font-size: 40px;
+        line-height: 55px;
+        color: #3399FF
+      }
+
+    a {
+      display: inline-block;
+      color: #3399FF;
+      text-align: center;
+      padding-right: 16px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+  }
+}
+
+
+
+.loginPage {
+  text-align: center;
+  margin-top: 30px;
+}

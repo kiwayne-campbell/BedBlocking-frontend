@@ -2,7 +2,7 @@
 <html ng-app="bedBlockingProject">
   <head>
     <meta charset="utf-8">
-    <title>Final Project</title>
+    <title>NHS Discharge Project</title>
     <link rel="stylesheet" href="/css/vendor.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/vendor.js" charset="utf-8"></script>
@@ -10,19 +10,20 @@
     <script src="/js/controllers/main.js" charset="utf-8"></script>
   </head>
     <body ng-controller="MainController as main">
-          <nav class="navbar navbar-light bg-faded navbar-fixed-top">
-            <a class="home-festiivo" ui-sref="home" ui-sref-active="active">
-              <strong style="font-size:25px">Hospital Discharge Care</strong>
+          <ul id="NhsUl">
+            <img id="NhsLogo" src="/images/foreground-NHS.jpg" height="50px" alt="">
+            <a ui-sref="usersShow" ui-sref-active="active">
+              <li id="navbarNhsTitle"><strong >DISCHARGE CARE</strong></li>
             </a>
-            <span class="navbar-text float-xs-right text-muted">
-            <a ng-if="main.isLoggedIn()" ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active">Profile</a>
-            <a ui-sref="festivalsIndex" ui-sref-active="active">My Patients</a>
-            <!-- <a ui-sref="commentsIndex" ui-sref-active="active">Comments</a> -->
-            <a ng-if="!main.isLoggedIn()" ui-sref="register" ui-sref-active="active">Register</a>
-            <a ng-if="!main.isLoggedIn()" ui-sref="login" ui-sref-active="active">Login</a>
-            <a ng-if="main.isLoggedIn()" href="#" ng-click="main.logout()">Logout</a>
-          </span>
-        </nav>
+            <li><a ng-if="!main.isLoggedIn()" ui-sref="login" ui-sref-active="active">Login</a></li>
+            <li><a ng-if="main.isLoggedIn()" href="#" ng-click="main.logout()">Logout</a></li>
+            <li><a ng-if="!main.isLoggedIn()" ui-sref="register" ui-sref-active="active">Register</a></li>
+            <li><a ng-if="main.isLoggedIn()" ui-sref="patientsIndex" ui-sref-active="active">My Patients</a></li>
+            <li><a ng-if="main.isLoggedIn()" ui-sref="patientsNew" ui-sref-active="active">Add Patients</a></li>
+            <li><a ng-if="main.isLoggedIn()" ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active">My Profile</a></li>
+
+          </ul>
+
     <main ui-view></main>
   </body>
 </html>

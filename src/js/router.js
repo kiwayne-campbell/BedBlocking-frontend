@@ -9,6 +9,16 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/usersIndex.html',
       controller: 'UsersIndexController as usersIndex'
     })
+    .state('usersShow', {
+      url: '/users/:id',
+      templateUrl: '/templates/usersShow.html',
+      controller: 'UsersShowController as usersShow'
+    })
+    .state('usersEdit', {
+      url: '/users/:id/edit',
+      templateUrl: '/templates/usersEdit.html',
+      controller: 'UsersEditController as usersEdit'
+    })
     .state('bedsIndex', {
       url: '/beds',
       templateUrl: '/templates/bedsIndex.html',
@@ -29,15 +39,10 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/patientsIndex.html',
       controller: 'PatientsIndexController as patientsIndex'
     })
-    .state('usersEdit', {
-      url: '/users/:id/edit',
-      templateUrl: '/templates/usersEdit.html',
-      controller: 'UsersEditController as usersEdit'
-    })
-    .state('usersShow', {
-      url: '/users/:id',
-      templateUrl: '/templates/usersShow.html',
-      controller: 'UsersShowController as usersShow'
+    .state('patientsNew', {
+      url: '/patients/new',
+      templateUrl: '/templates/patientsNew.html',
+      controller: 'PatientsNewController as patientsNew'
     })
     .state('patientsShow', {
       url: '/patients/:id',
@@ -55,5 +60,5 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'LoginController as login'
     });
 
-  $urlRouterProvider.otherwise('/users');
+  $urlRouterProvider.otherwise('/login');
 }

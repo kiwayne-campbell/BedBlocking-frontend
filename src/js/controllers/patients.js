@@ -1,7 +1,8 @@
 angular.module('bedBlockingProject')
   .controller('PatientsIndexController', PatientsIndexController)
   .controller('PatientsShowController', PatientsShowController)
-  .controller('PatientsEditController', PatientsEditController);
+  .controller('PatientsEditController', PatientsEditController)
+  .controller('PatientsNewController', PatientsNewController);
 
 PatientsIndexController.$inject = ['Patient', '$state'];
 function PatientsIndexController(Patient, $state) {
@@ -40,4 +41,28 @@ function PatientsEditController(Patient, $state) {
 
   this.update = update;
 
+}
+
+
+PatientsNewController.$inject = ['Patient', '$state', '$auth'];
+
+function PatientsNewController(Patient, $state, $auth) {
+
+  const patientsNew = this;
+  // console.log(patientsNew);
+  const currentUser = $auth.getPayload().id;
+  patientsNew.patient = {};
+
+  patientsNew.patient.user = currentUser;
+
+  function createPatient() {
+
+    // get userId from payload
+    patientsNew.patient.user = $auth.getPayload().id;
+
+    Patient.save(patientsNew.patient, (patient) => {
+      $state.go('patientsShow', { id: patient.id });
+    });
+  }
+  patientsNew.createPatient = createPatient;
 }
