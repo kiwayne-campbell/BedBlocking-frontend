@@ -1,7 +1,8 @@
-@import "vendor";
+@import 'vendor';
+@import 'variables';
 
 body {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 ul#NhsUl {
@@ -9,7 +10,7 @@ ul#NhsUl {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border-bottom: 2px solid #3399FF;
+    border-bottom: 2px solid $nhs-blue;
 
   img#NhsLogo {
     float: left;
@@ -23,12 +24,12 @@ ul#NhsUl {
         float: left;
         font-size: 40px;
         line-height: 55px;
-        color: #3399FF
+        color: $nhs-blue;
       }
 
     a {
       display: inline-block;
-      color: #3399FF;
+      color: $nhs-blue;
       text-align: center;
       padding-right: 16px;
       text-decoration: none;
