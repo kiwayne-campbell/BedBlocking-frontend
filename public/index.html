@@ -11,8 +11,8 @@
   </head>
     <body ng-controller="MainController as main">
           <ul id="NhsUl">
-            <img id="NhsLogo" src="/images/foreground-NHS.jpg" height="50px" alt="">
-            <a ui-sref="usersShow" ui-sref-active="active">
+            <a href="home"><img id="NhsLogo" src="/images/foreground-NHS.jpg" height="50px" alt=""></a>
+            <a ui-sref="home" ui-sref-active="active">
               <li id="navbarNhsTitle"><strong >DISCHARGE CARE</strong></li>
             </a>
             <li><a ng-if="!main.isLoggedIn()" ui-sref="login" ui-sref-active="active">Login</a></li>
