@@ -58,7 +58,12 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/login',
       templateUrl: '/templates/login.html',
       controller: 'LoginController as login'
+    })
+    .state('home', {
+      url: '/home',
+      templateUrl: '/templates/home.html',
+      controller: 'UsersShowController as usersShow'
     });
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/home');
 }

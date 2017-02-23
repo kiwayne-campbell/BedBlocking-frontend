@@ -1,11 +1,13 @@
 # BedBlocking-frontend
 
 
-This is a theoretical app that would help the NHS with bed BedBlocking-frontend
+This is a theoretical app that would help the NHS with bed BedBlocking
 
 # why?
 
 This is an app for proof of concept and what would an app that could help with bedblocking maybe function like?  
+
+http://www.telegraph.co.uk/news/2017/01/12/nhs-bed-blocking-rises-42-year-new-figures-show/
 
 my mother who has worked for the NHS, has seen inside the difficulties.  
 
