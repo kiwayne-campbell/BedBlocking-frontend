@@ -35,7 +35,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'AssessmentsIndexController as assessmentsIndex'
     })
     .state('patientsIndex', {
-      url: '/patients',
+      url: '/patients?q',
       templateUrl: '/templates/patientsIndex.html',
       controller: 'PatientsIndexController as patientsIndex'
     })
@@ -48,6 +48,11 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/patients/:id',
       templateUrl: '/templates/patientsShow.html',
       controller: 'PatientsShowController as patientsShow'
+    })
+    .state('patientsSearch', {
+      url: '/search',
+      templateUrl: '/templates/patientsSearch.html',
+      controller: 'PatientsIndexController as patientsShow'
     })
     .state('register', {
       url: '/register',

@@ -59,6 +59,7 @@ function PatientsNewController(Patient, $state, $auth) {
 
     // get userId from payload
     patientsNew.patient.user = $auth.getPayload().id;
+    // console.log(patientsNew.patient.user)
 
     Patient.save(patientsNew.patient, (patient) => {
       $state.go('patientsShow', { id: patient.id });

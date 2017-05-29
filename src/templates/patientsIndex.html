@@ -3,10 +3,10 @@
   <ul>
     <li ng-repeat="patient in patientsIndex.all">
       <a ui-sref="patientsShow({ id: patient.id })">
-      <h2>{{ patient.patient_no }}</h2>
-      <h4>{{ patient.first_name }}</h4>
-      <h4>{{ patient.last_name }}</h4>
-      <h4>{{ patient.diagnosis }}</h4>
+      <h2>Patient No.: {{ patient.patient_no }}</h2>
+      <h4>First Name: {{ patient.first_name }}</h4>
+      <h4>Last Name:{{ patient.last_name }}</h4>
+      <h4>Diagnosis: {{ patient.diagnosis }}</h4>
     </a>
     </li>
   </ul>
