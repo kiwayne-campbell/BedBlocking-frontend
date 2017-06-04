@@ -1,19 +1,24 @@
 
 <div class="row">
-  <div class="four columns">
+  <div class="three columns">
     &nbsp;
   </div>
 
-  <div class="four columns loginPage">
-    <h1>Welcome</h1> <h3> <h4>{{ usersShow.user.username }}</h4></h3>
+  <div class="six columns loginPage">
+    <h2>Welcome to the NHS patients Search</h2>
+    <p> In order to use this app please follow one of these actions once you have registered or logged in:</p>
+    <p> 1: Go to your profile to view your personal informnation<br>
+        2: Begin finding patients using the search function<br>
+        3: Add a new patient to the database under your care
+    </p>
     <section>
-        <button class="u-full-width button-primary" ui-sref="usersShow({ id: main.currentUserId })" >My Profile</button>
-        <button class="u-full-width button-primary" ui-sref="patientsSearch">Find Patient</button>
-        <button class="u-full-width button-primary" ui-sref="patientsNew">Add Patient</button>
+        <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="usersShow({ id: main.currentUserId })" >My Profile</button>
+        <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsSearch">Search for Patient</button>
+        <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsNew">Add Patient</button>
 
     </section>
   </div>
-  <div class="four columns">
+  <div class="three columns">
     &nbsp;
   </div>
 </div>

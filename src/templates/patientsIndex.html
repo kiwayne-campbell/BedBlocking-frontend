@@ -1,13 +1,29 @@
+<div class="row">
+  <div class="three columns">
+    &nbsp;
+  </div>
+
+<div class="six columns">
 <section>
-  <h1>Patients Show</h1>
+  <h1>My Patient List</h1>
+  <hr>
   <ul>
     <li ng-repeat="patient in patientsIndex.all">
-      <a ui-sref="patientsShow({ id: patient.id })">
-      <h2>Patient No.: {{ patient.patient_no }}</h2>
-      <h4>First Name: {{ patient.first_name }}</h4>
-      <h4>Last Name:{{ patient.last_name }}</h4>
-      <h4>Diagnosis: {{ patient.diagnosis }}</h4>
+      <a class="listCss" ui-sref="patientsShow({ id: patient.id })">
+      <h6>Patient No.: {{ patient.patient_no }}</h6>
+      <h6>First Name: {{ patient.first_name }}</h6>
+      <h6>Last Name:{{ patient.last_name }}</h6>
+      <h6>Diagnosis: {{ patient.diagnosis }}</h6>
     </a>
+    <hr>
     </li>
   </ul>
 </section>
+
+<button class="u-full-width button-primary" ui-sref="home">Back</button>
+</div>
+
+  <div class="three columns">
+    &nbsp;
+  </div>
+</div>

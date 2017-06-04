@@ -52,7 +52,7 @@ function Router($stateProvider, $urlRouterProvider) {
     .state('patientsSearch', {
       url: '/search',
       templateUrl: '/templates/patientsSearch.html',
-      controller: 'PatientsIndexController as patientsShow'
+      controller: 'PatientsIndexController as patientsIndex'
     })
     .state('register', {
       url: '/register',

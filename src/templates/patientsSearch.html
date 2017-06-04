@@ -1,24 +1,27 @@
-<h1>Search Patient</h1>
-
 <div class="row">
+  <div class="three columns">
+    &nbsp;
+  </div>
 
-    <div class="col-md-5"> </div>
 
-
-    <div class="col-md-5">
-                  <form role="form">
-                  <div class="col-md-10">
-                    <div class="form-group">
-                      <label class="sr-only" for="location">Location</label>
-                      <input type="text" class="form-control" id="location" placeholder="Search for patient!" ng-model="q">
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <button class=btn btn-large ui-sref="patientsIndex({ q: q })">Search</button>
-                  </div>
-                </form>
+    <div class="six columns">
+      <h1>Search Patient</h1>
+          <form role="form">
+            <div class="col-md-10">
+              <div class="form-group">
+                <label class="sr-only" for="location">Patient Search</label>
+                <input type="text" class="form-control u-full-width" id="location" placeholder="Search for patient!" ng-model="q">
+              </div>
             </div>
+          <div class="col-md-2">
+        <button class="u-full-width button-primary" ui-sref="patientsIndex({ q: q })">Search</button>
+      </div>
+      </form>
+      <button class="u-full-width button-primary" ui-sref="home">Back</button>
+    </div>
 
-<div class="col-md-5">  </div>
+  <div class="three columns">
+    &nbsp;
+  </div>
 
 </div>
