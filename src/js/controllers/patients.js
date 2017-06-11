@@ -4,8 +4,8 @@ angular.module('bedBlockingProject')
   .controller('PatientsEditController', PatientsEditController)
   .controller('PatientsNewController', PatientsNewController);
 
-PatientsIndexController.$inject = ['Patient', '$state'];
-function PatientsIndexController(Patient, $state) {
+PatientsIndexController.$inject = ['Patient', '$state', 'User'];
+function PatientsIndexController(Patient, $state, User) {
   const patientsIndex = this;
   patientsIndex.all = Patient.query({ q: $state.params.q });
 }
@@ -16,14 +16,22 @@ function PatientsShowController(Patient, $state, User) {
 
   patientsShow.patient = Patient.get($state.params);
 
-
-  function deletePatient() {
-    patientsShow.patient.$remove(() => {
-      $state.go('patientsIndex');
+  function addPatient() {
+    patientsShow.patient.$addPatient(() => {
+      $state.reload();
     });
   }
 
-  patientsShow.delete = deletePatient;
+  patientsShow.patient.addPatient = addPatient;
+
+
+  function removePatient() {
+    patientsShow.patient.$remove(() => {
+      $state.go('usersShow');
+    });
+  }
+
+  patientsShow.delete = removePatient ;
 }
 
 

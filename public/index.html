@@ -18,10 +18,10 @@
             <li><a ng-if="!main.isLoggedIn()" ui-sref="login" ui-sref-active="active">Login</a></li>
             <li><a ng-if="main.isLoggedIn()" href="#" ng-click="main.logout()">Logout</a></li>
             <li><a ng-if="!main.isLoggedIn()" ui-sref="register" ui-sref-active="active">Register</a></li>
-            <li><a ng-if="main.isLoggedIn()" ui-sref="patientsIndex" ui-sref-active="active">My Patients</a></li>
+            <li><a ng-if="main.isLoggedIn()" ui-sref="patientsIndex" ui-sref-active="active">All Patients</a></li>
             <li><a ng-if="main.isLoggedIn()" ui-sref="patientsNew" ui-sref-active="active">Add Patients</a></li>
             <li><a ng-if="main.isLoggedIn()" ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active">My Profile</a></li>
-
+            <li><a ng-if="main.isLoggedIn()" ui-sref="home" ui-sref-active="active">Home</a></li>
           </ul>
 
     <main ui-view></main>

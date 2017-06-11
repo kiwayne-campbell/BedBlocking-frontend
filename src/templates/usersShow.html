@@ -6,7 +6,24 @@
   <h1>My Profile</h1>
   <h4>{{ usersShow.user.username }}</h4>
   <h4>{{ usersShow.user.email }}</h4>
-  <button class="u-full-width button-primary" ui-sref="home">Back</button>
+
+  <h4>Patients in Care</h4>
+  <p>Total patients in my care: {{ usersShow.user.patients.length}} </p>
+  <hr>
+  <ul>
+    <li ng-repeat="patient in usersShow.user.patients">
+      <a class="listCss" ui-sref="patientsShow({ id: patient.id })">
+        <h6>Patient No.: {{ patient.patient_no }}</h6>
+        <h6>First Name: {{ patient.first_name }}</h6>
+        <h6>Last Name:{{ patient.last_name }}</h6>
+      </a>
+      <hr>
+    </li>
+  </ul>
+   
+  <button class="u-full-width button-primary" ui-sref="home">Back</a>
+  <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsSearch">Search for Patient</button>
+  <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsNew">Add Patient</button>
 </div>
 
  <div class="three columns">

@@ -11,11 +11,15 @@
         2: Begin finding patients using the search function<br>
         3: Add a new patient to the database under your care
     </p>
+    <div ng-if="main.isLoggedIn()" ng-controller="UsersIndexController as usersIndex">
+      <p>Current active staff: {{ usersIndex.all.length }} </p>
+    </div>
+    
+    <p ng-if="main.isLoggedIn()"> Total patients in care: {{ patientsIndex.all.length}} </p>
     <section>
         <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="usersShow({ id: main.currentUserId })" >My Profile</button>
         <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsSearch">Search for Patient</button>
         <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsNew">Add Patient</button>
-
     </section>
   </div>
   <div class="three columns">

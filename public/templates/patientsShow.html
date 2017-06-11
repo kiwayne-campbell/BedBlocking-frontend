@@ -14,7 +14,18 @@
 
   <h4>Pocs:{{ patientsShow.patient.pocs }}</h4>
   <h4>Assessments:{{ patientsShow.patient.assessments }}</h4>
-  <h4>Carers:{{ patientsShow.patient.users }}</h4>
+  <hr>
+   <h4>Carers</h4>
+  <ul>  
+     <li ng-repeat="user in patientsShow.patient.users">
+      <a class="listCss" ui-sref="usersShow({ id: user.id })">
+        <h6>Username.: {{ user.username }}</h6>
+        <h6>Email: {{ user.email }}</h6>
+      </a>
+      </hr>
+    </li>
+  </ul>
+  
 
   <button class="u-full-width button-primary" ui-sref="patientsIndex">Back</button>
   </div>

@@ -37,13 +37,13 @@ function UsersShowController(User, $state, $auth, API_URL, Patient) {
   usersShow.delete = deleteUser;
 
 
-  function unfavorite(festival) {
-    Festival.unfavorite({ id: festival.id }, () => {
-      usersShow.user.festivals.splice(usersShow.user.festivals.indexOf(festival), 1);
+  function removePatient(patient) {
+    Patient.removePatient({ id: patient.id }, () => {
+      usersShow.user.patients.splice(usersShow.user.patients.indexOf(patient), 1);
     });
   }
 
-  usersShow.unfavorite = unfavorite;
+  usersShow.removePatient = removePatient;
 
 
 }
