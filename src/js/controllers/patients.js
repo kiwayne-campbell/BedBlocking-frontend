@@ -16,22 +16,25 @@ function PatientsShowController(Patient, $state, User) {
 
   patientsShow.patient = Patient.get($state.params);
 
-  function addPatient() {
-    patientsShow.patient.$addPatient(() => {
-      $state.reload();
-    });
+  patientsShow.addPatient = function() {
+    // patientsShow.patient.$addPatient(() => {
+    //   $state.reload();
+    // });
+    // patientsShow.patient.addPatient = addPatient;
+    console.log('click');
+
   }
 
-  patientsShow.patient.addPatient = addPatient;
+  // patientsShow.patient.addPatient = addPatient;
 
 
-  function removePatient() {
-    patientsShow.patient.$remove(() => {
-      $state.go('usersShow');
-    });
-  }
+  // function removePatient() {
+  //   patientsShow.patient.$removePatient(() => {
+  //     $state.go('usersShow');
+  //   });
+  // }
 
-  patientsShow.delete = removePatient ;
+  // patientsShow.delete = removePatient;
 }
 
 

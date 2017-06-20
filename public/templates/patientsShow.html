@@ -3,34 +3,30 @@
   <div class="three columns">
     &nbsp;
   </div>
-
   <div class="six columns">
     <h1>patient Info</h1>
+    <h4>Patient no.:{{ patientsShow.patient.patient_no }}</h4>
+    <h4>First Name:{{ patientsShow.patient.first_name }}</h4>
+    <h4>Last Name:{{ patientsShow.patient.last_name }}</h4>
+    <h4>Diagnosis: {{ patientsShow.patient.diagnosis }}</h4>
 
-  <h4>Patient no.:{{ patientsShow.patient.patient_no }}</h4>
-  <h4>First Name:{{ patientsShow.patient.first_name }}</h4>
-  <h4>Last Name:{{ patientsShow.patient.last_name }}</h4>
-  <h4>Diagnosis: {{ patientsShow.patient.diagnosis }}</h4>
-
-  <h4>Pocs:{{ patientsShow.patient.pocs }}</h4>
-  <h4>Assessments:{{ patientsShow.patient.assessments }}</h4>
-  <hr>
-   <h4>Carers</h4>
-  <ul>  
-     <li ng-repeat="user in patientsShow.patient.users">
-      <a class="listCss" ui-sref="usersShow({ id: user.id })">
+    <h4>Pocs:{{ patientsShow.patient.pocs }}</h4>
+    <h4>Assessments:{{ patientsShow.patient.assessments }}</h4>
+    <hr>
+    <h4>Carers</h4>
+    <ul>  
+      <li ng-repeat="user in patientsShow.patient.users">
+        <a class="listCss" ui-sref="usersShow({ id: user.id })">
+        <hr>
         <h6>Username.: {{ user.username }}</h6>
-        <h6>Email: {{ user.email }}</h6>
-      </a>
-      </hr>
-    </li>
-  </ul>
-  
-
-  <button class="u-full-width button-primary" ui-sref="patientsIndex">Back</button>
+        </a>
+        </hr>
+      </li>
+    </ul>
+      <button ng-click="patientsShow.addPatient()" class="u-full-width button-primary">Add patient to my care</button>
+    <button class="u-full-width button-primary" ui-sref="patientsIndex">Back</button>
   </div>
-
-   <div class="three columns">
+  <div class="three columns">
     &nbsp;
   </div>
 

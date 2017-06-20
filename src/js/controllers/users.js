@@ -40,6 +40,7 @@ function UsersShowController(User, $state, $auth, API_URL, Patient) {
   function removePatient(patient) {
     Patient.removePatient({ id: patient.id }, () => {
       usersShow.user.patients.splice(usersShow.user.patients.indexOf(patient), 1);
+      console.log('click')
     });
   }
 

@@ -17,11 +17,14 @@
         <h6>First Name: {{ patient.first_name }}</h6>
         <h6>Last Name:{{ patient.last_name }}</h6>
       </a>
+      <button class="u-full-width button-primary" ui-sref="pocsIndex">add POC for patient</a>
+      <button class="u-full-width button-primary" ui-sref="assessmentsIndex">add Assessment for patient</a>
+      <button class="u-full-width button-primary" ng-click="removePatient()">Remove patient from care</a>
       <hr>
     </li>
   </ul>
    
-  <button class="u-full-width button-primary" ui-sref="home">Back</a>
+  <button class="u-full-width button-primary" ui-sref="home">Homepage</a>
   <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsSearch">Search for Patient</button>
   <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsNew">Add Patient</button>
 </div>

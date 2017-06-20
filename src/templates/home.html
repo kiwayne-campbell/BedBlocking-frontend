@@ -20,6 +20,7 @@
         <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="usersShow({ id: main.currentUserId })" >My Profile</button>
         <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsSearch">Search for Patient</button>
         <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsNew">Add Patient</button>
+        <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsIndex">Show all Patients in care</button>
     </section>
   </div>
   <div class="three columns">

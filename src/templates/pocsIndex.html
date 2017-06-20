@@ -1,5 +1,5 @@
 <section>
-  <h1>Pocs Show</h1>
+  <h1>Poc New</h1>
   <ul>
     <li ng-repeat="poc in pocsIndex.all">
       <h2>{{ poc.home_care }}</h2>
@@ -19,3 +19,39 @@
     </li>
   </ul>
 </section>
+
+<div class="row">
+  <div class="three columns">
+    &nbsp;
+  </div>
+
+  <div class="six columns">
+    <form ng-submit="patientsNew.createPatient()">
+      <h2>Create Poc</h2>
+        <div>
+          <label>Patient No.</label>
+          <input class="u-full-width" type="text" name="patient_no" placeholder="name" ng-model="patientsNew.patient.patient_no">
+        </div>
+        <div>
+          <label>Patient First Name</label>
+          <input class="u-full-width" type="text" name="first_name" placeholder="website link" ng-model="patientsNew.patient.first_name">
+        </div>
+        <div>
+          <label>Patient Last Name</label>
+          <input class="u-full-width" type="text" name="first_name" placeholder="website link" ng-model="patientsNew.patient.last_name">
+        </div>
+        <div>
+          <label>Patient Diagnosis</label>
+          <input class="u-full-width" type="text" name="diagnosis" placeholder="website link" ng-model="patientsNew.patient.diagnosis">
+        </div>
+        <div>
+          <label>Patient Assessment</label>
+          <input class="u-full-width" type="text" name="assesment" placeholder="website link" ng-model="patientsNew.patient.assesment">
+        </div>
+        <button class="u-full-width button-primary">Create Patient</button>
+        <button class="u-full-width button-primary" ui-sref="home">Back</button>
+    </form>
+
+      <div class="three columns">
+        &nbsp;
+      </div>

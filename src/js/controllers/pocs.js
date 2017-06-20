@@ -1,6 +1,7 @@
 angular.module('bedBlockingProject')
   .controller('PocsIndexController', PocsIndexController)
   .controller('PocsShowController', PocsShowController)
+  .controller('PocsNewController', PocsNewController)
   .controller('PocsEditController', PocsEditController);
 
 PocsIndexController.$inject = ['Poc'];
@@ -63,4 +64,29 @@ function PocsEditController(Poc, $state) {
 
   this.update = update;
 
+}
+
+
+PocsNewController.$inject = ['Poc', '$state', '$auth'];
+
+function PocsNewController(Poc, $state, $auth) {
+
+  const pocsNew = this;
+  // console.log(patientsNew);
+  const currentUser = $auth.getPayload().id;
+  pocsNew.poc = {};
+
+  pocsNew.poc.user = currentUser;
+
+  function createPoc() {
+
+    // get userId from payload
+    pocsNew.poc.user = $auth.getPayload().id;
+    // console.log(patientsNew.patient.user)
+
+    Poc.save(pocsNew.poc, (poc) => {
+      $state.go('pocsShow', { id: poc.id });
+    });
+  }
+  pocsNew.createPoc = createPoc;
 }
