@@ -36,15 +36,32 @@ function UsersShowController(User, $state, $auth, API_URL, Patient) {
 
   usersShow.delete = deleteUser;
 
+  console.log();
 
-  function removePatient(patient) {
-    Patient.removePatient({ id: patient.id }, () => {
-      usersShow.user.patients.splice(usersShow.user.patients.indexOf(patient), 1);
-      console.log('click')
-    });
+
+  // function removePatient(patient) {
+  //   Patient.removePatient({ id: patient.id }, () => {
+  //     usersShow.user.patients.splice(usersShow.user.patients.indexOf(patient), 1);
+  //     console.log('click')
+  //   });
+  // }
+
+  // usersShow.removePatient = removePatient;
+
+
+
+   usersShow.removePatient = function(){
+    console.log('click');
+    console.log(this.user.patient_ids);
   }
 
-  usersShow.removePatient = removePatient;
+  var test = usersShow.user.patients
+
+  usersShow.getPatient = function(){
+   console.log('click');
+   console.log(test);
+   ;
+ }
 
 
 }

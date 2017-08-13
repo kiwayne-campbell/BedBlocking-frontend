@@ -10,16 +10,30 @@ function PatientsIndexController(Patient, $state, User) {
   patientsIndex.all = Patient.query({ q: $state.params.q });
 }
 
-PatientsShowController.$inject = ['Patient', '$state', 'User'];
-function PatientsShowController(Patient, $state, User) {
+PatientsShowController.$inject = ['Patient', '$state', 'User', '$stateParams', '$location'];
+function PatientsShowController(Patient, $state, User, $stateParams, $location) {
   const patientsShow = this;
 
   patientsShow.patient = Patient.get($state.params);
 
+  var urlRoute = $stateParams.id;
+  var urlCheck = $location.path();
+
+  patientsShow.id = {
+   id: $state.params.id
+  };
+
+  console.log(patientsShow.id);
+  console.log(patientsShow.url);
+  console.log(patientsShow.patient);
+  console.log(urlRoute);
+  console.log(urlCheck);
+
   patientsShow.addPatient = function() {
-    // patientsShow.patient.$addPatient(() => {
-    //   $state.reload();
-    // });
+    patientsShow.patient.$addPatient(() => {
+      console.log('click');
+      $state.go('usersShow');
+    });
     // patientsShow.patient.addPatient = addPatient;
     console.log('click');
 

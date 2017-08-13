@@ -19,11 +19,12 @@
       </a>
       <button class="u-full-width button-primary" ui-sref="pocsIndex">add POC for patient</a>
       <button class="u-full-width button-primary" ui-sref="assessmentsIndex">add Assessment for patient</a>
-      <button class="u-full-width button-primary" ng-click="removePatient()">Remove patient from care</a>
+      <button class="u-full-width button-primary" ng-click="usersShow.removePatient()">Remove patient from care</a>
+      <button class="u-full-width button-primary" ng-click="usersShow.getPatient()">Get Patient info</a>
       <hr>
     </li>
   </ul>
-   
+
   <button class="u-full-width button-primary" ui-sref="home">Homepage</a>
   <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsSearch">Search for Patient</button>
   <button ng-if="main.isLoggedIn()" class="u-full-width button-primary" ui-sref="patientsNew">Add Patient</button>
