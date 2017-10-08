@@ -21,49 +21,13 @@ function UsersShowController(User, $state, $auth, API_URL, Patient) {
 
 // get payload gives us current users id - user ID is IN TOKEN (BACKEND)
   usersShow.isCurrentUser = isCurrentUser;
-  console.log(isCurrentUser);
 
   usersShow.user = User.get($state.params);
-
-  console.log(usersShow.user);
-
-
   function deleteUser() {
     usersShow.user.$remove(() => {
       $state.go('usersIndex');
     });
   }
-
-  usersShow.delete = deleteUser;
-
-  console.log();
-
-
-  // function removePatient(patient) {
-  //   Patient.removePatient({ id: patient.id }, () => {
-  //     usersShow.user.patients.splice(usersShow.user.patients.indexOf(patient), 1);
-  //     console.log('click')
-  //   });
-  // }
-
-  // usersShow.removePatient = removePatient;
-
-
-
-   usersShow.removePatient = function(){
-    console.log('click');
-    console.log(this.user.patient_ids);
-  }
-
-  var test = usersShow.user.patients
-
-  usersShow.getPatient = function(){
-   console.log('click');
-   console.log(test);
-   ;
- }
-
-
 }
 
 
@@ -82,28 +46,3 @@ function UsersEditController(User, $state) {
   this.update = update;
 
 }
-
-
-
-// const currentUserId = $auth.getPayload().id;
-// console.log('currentUserId:', currentUserId);
-// usersShow.Edit = false;
-
-// wait until data has been returned from db to run function.
-// User.get($state.params).$promise.then((data) => {
-//   console.log(data);
-//   usersShow.user = data;
-//   allowUserToEdit();
-// });
-
-//prevent logged in user editing other users
-// function allowUserToEdit() {
-  // console.log('user to edit:', usersShow.user.id);
-  // console.log('currentUser:', currentUserId);
-//   if (usersShow.user.id === currentUserId) {
-//     usersShow.Edit = true;
-//     console.log('usersShow.user.id:',usersShow.user.id);
-//   }
-// }
-//
-// usersShow.allowUserToEdit = allowUserToEdit;

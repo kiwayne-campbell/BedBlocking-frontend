@@ -23,34 +23,13 @@ function PatientsShowController(Patient, $state, User, $stateParams, $location) 
    id: $state.params.id
   };
 
-  console.log(patientsShow.id);
-  console.log(patientsShow.url);
-  console.log(patientsShow.patient);
-  console.log(urlRoute);
-  console.log(urlCheck);
-
   patientsShow.addPatient = function() {
     patientsShow.patient.$addPatient(() => {
       console.log('click');
-      $state.go('usersShow');
+      $state.go('usersIndex');
     });
-    // patientsShow.patient.addPatient = addPatient;
-    console.log('click');
-
   }
-
-  // patientsShow.patient.addPatient = addPatient;
-
-
-  // function removePatient() {
-  //   patientsShow.patient.$removePatient(() => {
-  //     $state.go('usersShow');
-  //   });
-  // }
-
-  // patientsShow.delete = removePatient;
 }
-
 
 PatientsEditController.$inject = ['Patient', '$state'];
 function PatientsEditController(Patient, $state) {
@@ -74,7 +53,6 @@ PatientsNewController.$inject = ['Patient', '$state', '$auth'];
 function PatientsNewController(Patient, $state, $auth) {
 
   const patientsNew = this;
-  // console.log(patientsNew);
   const currentUser = $auth.getPayload().id;
   patientsNew.patient = {};
 
@@ -84,7 +62,6 @@ function PatientsNewController(Patient, $state, $auth) {
 
     // get userId from payload
     patientsNew.patient.user = $auth.getPayload().id;
-    // console.log(patientsNew.patient.user)
 
     Patient.save(patientsNew.patient, (patient) => {
       $state.go('patientsShow', { id: patient.id });
