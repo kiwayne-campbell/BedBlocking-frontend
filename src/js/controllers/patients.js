@@ -16,17 +16,9 @@ function PatientsShowController(Patient, $state, User, $stateParams, $location) 
 
   patientsShow.patient = Patient.get($state.params);
 
-  var urlRoute = $stateParams.id;
-  var urlCheck = $location.path();
-
-  patientsShow.id = {
-   id: $state.params.id
-  };
-
   patientsShow.addPatient = function() {
     patientsShow.patient.$addPatient(() => {
-      console.log('click');
-      $state.go('usersIndex');
+      $state.go('usersShow');
     });
   }
 }
